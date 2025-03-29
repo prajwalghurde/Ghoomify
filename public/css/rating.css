@@ -1,0 +1,40 @@
+/* Star rating input */
+.star-rating {
+  display: inline-block;
+  font-size: 1.5rem; /* Adjust star size */
+}
+
+.star-rating .star {
+  color: #ccc; /* Gray for unselected stars */
+  margin-right: 5px; /* Spacing between stars */
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.star-rating .star.filled {
+  color: #f5c518; /* Yellow for selected stars */
+}
+
+.star-rating .star.hover {
+  color: #f5c518; /* Yellow for hover effect */
+}
+
+/* Validation feedback for rating */
+.star-rating .invalid-feedback {
+  display: none;
+}
+
+.star-rating:invalid .invalid-feedback {
+  display: block;
+}
+
+/* Star display in reviews */
+.card .star {
+  font-size: 1rem; /* Smaller size for review display */
+  color: #ccc; /* Gray for unselected stars */
+  margin-right: 3px;
+}
+
+.card .star.filled {
+  color: #f5c518; /* Yellow for rated stars */
+}
