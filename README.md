@@ -17,6 +17,12 @@ Welcome to **Ghoomify** – A platform to explore and list travel destinations! 
 - **Storage**: Cloudinary for image uploads
 - **Mapping**: Mapbox for interactive maps
 
+
+
+##📸 Preview
+![Ghoomify Preview](public/homepageghoomify.png)
+
+
 ## 🚀 Getting Started
 ### 1️⃣ Clone the Repository:
 ```sh
