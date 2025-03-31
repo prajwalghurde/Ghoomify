@@ -19,7 +19,7 @@ Welcome to **Ghoomify** – A platform to explore and list travel destinations! 
 
 
 
-##📸 Preview
+## 📸 Preview
 ![Ghoomify Preview](public/homepageghoomify.png)
 
 
