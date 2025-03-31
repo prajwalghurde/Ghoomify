@@ -7,7 +7,7 @@ Welcome to **Ghoomify** – A platform to explore and list travel destinations! 
 - ⭐ **Add Reviews & Ratings** – Share your experiences.
 - 🔐 **User Authentication** – Secure login & signup with Passport.js.
 - 🖼️ **Image Uploads** – Upload images using Cloudinary.
-- 📍 **Interactive Map** – Locate destinations using Mapbox.
+
 
 ## 🛠️ Tech Stack
 - **Frontend**: HTML, CSS, EJS (Embedded JavaScript)
@@ -15,7 +15,7 @@ Welcome to **Ghoomify** – A platform to explore and list travel destinations! 
 - **Database**: MongoDB with Mongoose
 - **Authentication**: Passport.js
 - **Storage**: Cloudinary for image uploads
-- **Mapping**: Mapbox for interactive maps
+
 
 
 
