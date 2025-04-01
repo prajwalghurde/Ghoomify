@@ -19,24 +19,27 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
-const compression = require("compression"); // 🆕 Gzip Compression
-const nocache = require("nocache"); // 🆕 Disable browser caching for dynamic content
+const compression = require("compression"); // Gzip Compression
+const nocache = require("nocache"); // Disable browser caching for dynamic content
+const helmet = require("helmet"); // Security Headers
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(compression()); // 🆕 Compress response data for faster loads
-app.use(nocache()); // 🆕 Prevent caching dynamic data
+app.use(compression()); // Compress response data for faster loads
+app.use(nocache()); // Prevent caching dynamic data
+app.use(helmet()); // Add security headers
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(methodOverride("_method"));
 app.engine("ejs", ejsmate);
-app.use(express.static(path.join(__dirname, "public"), { maxAge: "1y" })); // 🆕 Cache static assets for a year
+app.use(express.static(path.join(__dirname, "public"), { maxAge: "1y" })); // Cache static assets for a year
 
 const dbUrl = process.env.ATLASDB_URL;
+
 async function main() {
     try {
-        await mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true });
+        await mongoose.connect(dbUrl); // No need for useNewUrlParser and useUnifiedTopology
         console.log("Connected to DB");
     } catch (err) {
         console.error("Database connection error:", err);
@@ -85,7 +88,7 @@ app.use((req, res, next) => {
     next();
 });
 
-// 🆕 Preload some database queries to improve performance
+// Preload some database queries to improve performance
 app.use(async (req, res, next) => {
     if (!req.session.preloadedData) {
         try {
